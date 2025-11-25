@@ -123,25 +123,25 @@ export default function MenuCompare() {
   const [activeVenueIds, setActiveVenueIds] = useState<string[]>([]);
 
   // DEV DATA 
-  useEffect(() => {
-    const demoVenues: Venue[] = [
-      { id: "v1", name: "Bean & Bloom", address: "123 Walnut St" },
-      { id: "v2", name: "Riverfront Roasters", address: "45 Schuylkill Ave" },
-      { id: "v3", name: "Market Square Café", address: "9 Market St" },
-    ];
-    setVenues(demoVenues);
-    setActiveVenueIds(demoVenues.map((v) => v.id));
+  // useEffect(() => {
+  //   const demoVenues: Venue[] = [
+  //     { id: "v1", name: "Bean & Bloom", address: "123 Walnut St" },
+  //     { id: "v2", name: "Riverfront Roasters", address: "45 Schuylkill Ave" },
+  //     { id: "v3", name: "Market Square Café", address: "9 Market St" },
+  //   ];
+  //   setVenues(demoVenues);
+  //   setActiveVenueIds(demoVenues.map((v) => v.id));
 
-    const demoItems: MenuItem[] = [
-      { id: "i1", name: "Latte 12oz", venueId: "v1", venueName: "Bean & Bloom", category: "Coffee", price: 4.75 },
-      { id: "i2", name: "Cappuccino 12oz", venueId: "v1", venueName: "Bean & Bloom", category: "Coffee", price: 4.50 },
-      { id: "i3", name: "Cold Brew 16oz", venueId: "v2", venueName: "Riverfront Roasters", category: "Coffee", price: 4.25 },
-      { id: "i4", name: "Matcha Latte 12oz", venueId: "v2", venueName: "Riverfront Roasters", category: "Tea", price: 5.25 },
-      { id: "i5", name: "Croissant", venueId: "v1", venueName: "Bean & Bloom", category: "Pastry", price: 3.95 },
-      { id: "i6", name: "Turkey Club", venueId: "v3", venueName: "Market Square Café", category: "Sandwich", price: 9.50 },
-    ];
-    setItems(demoItems);
-  }, []);
+  //   const demoItems: MenuItem[] = [
+  //     { id: "i1", name: "Latte 12oz", venueId: "v1", venueName: "Bean & Bloom", category: "Coffee", price: 4.75 },
+  //     { id: "i2", name: "Cappuccino 12oz", venueId: "v1", venueName: "Bean & Bloom", category: "Coffee", price: 4.50 },
+  //     { id: "i3", name: "Cold Brew 16oz", venueId: "v2", venueName: "Riverfront Roasters", category: "Coffee", price: 4.25 },
+  //     { id: "i4", name: "Matcha Latte 12oz", venueId: "v2", venueName: "Riverfront Roasters", category: "Tea", price: 5.25 },
+  //     { id: "i5", name: "Croissant", venueId: "v1", venueName: "Bean & Bloom", category: "Pastry", price: 3.95 },
+  //     { id: "i6", name: "Turkey Club", venueId: "v3", venueName: "Market Square Café", category: "Sandwich", price: 9.50 },
+  //   ];
+  //   setItems(demoItems);
+  // }, []);
 
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<string>("All");

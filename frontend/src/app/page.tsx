@@ -57,7 +57,7 @@ type Venue = {
   address: string;
 };
 
-type MenuItem = {
+type Item = {
   id: string;
   name: string;
   venueId: string;
@@ -71,7 +71,7 @@ function currency(n: number) { // to convert the price to 2 decimals
   return `$${n.toFixed(2)}`;
 }
 
-function computeStats(items: MenuItem[]) {
+function computeStats(items: Item[]) {
   if (items.length === 0)
     return { min: 0, max: 0, avg: 0, median: 0 };
   const prices = items.map((i) => i.price).sort((a, b) => a - b); // sort so it's easier to calculate the stats
@@ -86,7 +86,7 @@ function computeStats(items: MenuItem[]) {
   return { min, max, avg, median };
 }
 
-function byCategory(items: MenuItem[]) {
+function byCategory(items: Item[]) {
   const arr: Record<string, { sum: number; count: number; prices: number[] }> = {}; // arr as array. couldnt think of another name lol
   for (const i of items) { // go through every item
     // initialize category bucket if missing
@@ -119,7 +119,7 @@ function byCategory(items: MenuItem[]) {
 //------------------------------ to return --------------------------------
 export default function MenuCompare() {
   const [venues, setVenues] = useState<Venue[]>([]);
-  const [items, setItems] = useState<MenuItem[]>([]);
+  const [items, setItems] = useState<Item[]>([]);
   const [activeVenueIds, setActiveVenueIds] = useState<string[]>([]);
 
   // DEV DATA 
@@ -132,7 +132,7 @@ export default function MenuCompare() {
   //   setVenues(demoVenues);
   //   setActiveVenueIds(demoVenues.map((v) => v.id));
 
-  //   const demoItems: MenuItem[] = [
+  //   const demoItems: Item[] = [
   //     { id: "i1", name: "Latte 12oz", venueId: "v1", venueName: "Bean & Bloom", category: "Coffee", price: 4.75 },
   //     { id: "i2", name: "Cappuccino 12oz", venueId: "v1", venueName: "Bean & Bloom", category: "Coffee", price: 4.50 },
   //     { id: "i3", name: "Cold Brew 16oz", venueId: "v2", venueName: "Riverfront Roasters", category: "Coffee", price: 4.25 },
